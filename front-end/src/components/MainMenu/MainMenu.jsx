@@ -1,3 +1,4 @@
+import styles from './MainMenu.module.css'
 import { NavLink } from 'react-router-dom'
 
 export function MainMenu() {
@@ -16,7 +17,7 @@ export function MainMenu() {
     },
   ]
   return (
-    <ul>
+    <ul className={styles.mainMenu}>
       {genders.map((category) => {
         return (
           <li key={category.path}>
