@@ -8,9 +8,7 @@ export function CartProduct({ product }) {
       <div className={styles.cartProductInfo}>
         <div className={styles.topRow}>
           <h3>
-            {product.brand}
-            {''}
-            {product.productName}
+            {product.brand} {product.productName}
           </h3>
           <p>{product.pricePLN}</p>
         </div>

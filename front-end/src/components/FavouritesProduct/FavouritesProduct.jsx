@@ -9,9 +9,7 @@ export function FavouritesProduct({ product }) {
       <div className={styles.favouriteProductInfo}>
         <div className={styles.topRow}>
           <h3>
-            {product.brand}
-            {''}
-            {product.productName}
+            {product.brand} {product.productName}
           </h3>
           <p>{product.pricePLN}</p>
         </div>
