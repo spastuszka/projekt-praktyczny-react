@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { MainPage } from './views/MainPage/MainPage.jsx'
 import { Favourites } from './views/Favourites/Favourites.jsx'
+import { Cart } from './views/Cart/Cart.jsx'
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: 'ulubione',
     element: <Favourites />,
+  },
+  {
+    path: 'koszyk',
+    element: <Cart />,
   },
 ])
 
