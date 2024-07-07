@@ -8,7 +8,7 @@ export function Hero({ heroImage }) {
       style={{ backgroundImage: `url(${heroImage})` }}
     >
       <CenteredContent>
-        <div>
+        <div className={styles.contentWrapper}>
           <h2>Letnie promocje do -70%!</h2>
           <p>Tylko najlepsze okazje!</p>
           <button>Sprawdź produkty</button>
