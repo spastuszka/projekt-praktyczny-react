@@ -1,9 +1,12 @@
-import { CenteredContent } from '../CenteredContent/CenteredContent'
 import styles from './Hero.module.css'
+import { CenteredContent } from '../CenteredContent/CenteredContent'
 
-export function Hero() {
+export function Hero({ heroImage }) {
   return (
-    <div>
+    <div
+      className={styles.hero}
+      style={{ backgroundImage: `url(${heroImage})` }}
+    >
       <CenteredContent>
         <div>
           <h2>Letnie promocje do -70%!</h2>
