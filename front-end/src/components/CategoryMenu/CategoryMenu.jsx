@@ -4,8 +4,8 @@ import { NavLink } from 'react-router-dom'
 
 export function CategoryMenu() {
   return (
-    <div>
-      <ul className={styles.categoryMenu}>
+    <div className={styles.categoryMenu}>
+      <ul>
         {CATEGORIES.map((category) => {
           return (
             <li key={category.path}>
