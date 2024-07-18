@@ -7,19 +7,24 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { MainPage } from './views/MainPage/MainPage.jsx'
 import { Favourites } from './views/Favourites/Favourites.jsx'
 import { Cart } from './views/Cart/Cart.jsx'
+import { ProductList } from './views/ProductList/ProductList.jsx'
 
 const router = createBrowserRouter([
+  // {
+  //   path: '/',
+  //   element: <MainPage />,
+  // },
+  // {
+  //   path: 'ulubione',
+  //   element: <Favourites />,
+  // },
+  // {
+  //   path: 'koszyk',
+  //   element: <Cart />,
+  // },
   {
     path: '/',
-    element: <MainPage />,
-  },
-  {
-    path: 'ulubione',
-    element: <Favourites />,
-  },
-  {
-    path: 'koszyk',
-    element: <Cart />,
+    element: <ProductList />,
   },
 ])
 
