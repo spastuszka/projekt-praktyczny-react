@@ -11,8 +11,6 @@ export function CartSummary({ products }) {
     sum += product.pricePLN
   })
 
-  sum = 600
-
   const totalCost = sum > minSumForFreeDelivery ? sum : sum + deliveryCost
   return (
     <div className={styles.cartSummary}>
