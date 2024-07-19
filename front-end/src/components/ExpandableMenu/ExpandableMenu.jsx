@@ -1,10 +1,12 @@
+import styles from './ExpandableMenu.module.css'
+
 import { CATEGORIES } from '../../constants/categories'
 import { NavLink } from 'react-router-dom'
 import ARROW_ICON from '../../assets/arrow.svg'
 
 export function ExpandableMenu() {
   return (
-    <div>
+    <div className={styles.expandableMenu}>
       <p>Kobieta</p>
       <ul>
         {CATEGORIES.map((category) => {
