@@ -10,6 +10,7 @@ export function Photos({ product }) {
         {product.photos.map((photo) => {
           return (
             <img
+              className={currentPhoto === photo ? styles.active : ''}
               onClick={() => setCurrentPhoto(photo)}
               key={photo}
               src={photo}
