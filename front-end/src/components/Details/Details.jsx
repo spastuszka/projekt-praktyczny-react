@@ -5,12 +5,12 @@ import { FullWidthButton } from '../FullWidthButton/FullWidthButton'
 
 export function Details({ product }) {
   return (
-    <div>
+    <div className={styles.details}>
       <h2>{product.brand}</h2>
-      <p>{product.productName}</p>
-      <p>{product.pricePLN}</p>
+      <p className={styles.productName}>{product.productName}</p>
+      <p className={styles.price}>{product.pricePLN}</p>
       <FullWidthButton isBlack={true}>Dodaj do koszyka</FullWidthButton>
-      <ul>
+      <ul className={styles.extraInfo}>
         <li>
           <img src={CAR_ICON} />
           Dostawa do 24h
