@@ -8,7 +8,6 @@ import { MainPage } from './views/MainPage/MainPage.jsx'
 import { Favourites } from './views/Favourites/Favourites.jsx'
 import { Cart } from './views/Cart/Cart.jsx'
 import { ProductList } from './views/ProductList/ProductList.jsx'
-import { ProductDetails } from './views/ProductDetails/ProductDetails.jsx'
 import { Layout } from './components/Layout/Layout.jsx'
 import { mainPageLoader } from './api/mainPageLoader.js'
 
