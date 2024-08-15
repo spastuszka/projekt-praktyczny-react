@@ -27,6 +27,9 @@ const router = createBrowserRouter([
       {
         path: '/:gender',
         element: <MainPage />,
+        loader: ({ params }) => {
+          return fetch(`http://localhost:3000/${params.gender}`)
+        },
       },
     ],
   },
