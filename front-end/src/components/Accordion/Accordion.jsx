@@ -1,17 +1,28 @@
 import styles from './Accordion.module.css'
 import ARROW_ICON from '../../assets/arrow.svg'
+import { useState } from 'react'
 
 export function Accordion({ items }) {
+  const [activeItemIndex, setActiveItemIndex] = useState(0)
+
   return (
     <ul>
-      {items.map((item) => {
+      {items.map((item, index) => {
         return (
-          <li key={item.title}>
+          <li
+            key={item.title}
+            onClick={() => {
+              setActiveItemIndex(index)
+            }}
+          >
             <div className={styles.item}>
               <p>{item.title}</p>
-              <img src={ARROW_ICON} />
+              <img
+                src={ARROW_ICON}
+                className={activeItemIndex === index ? styles.expanded : ''}
+              />
             </div>
-            <p>{item.content}</p>
+            {activeItemIndex === index && <p>{item.content}</p>}
           </li>
         )
       })}
