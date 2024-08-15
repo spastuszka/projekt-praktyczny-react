@@ -26,7 +26,7 @@ const router = createBrowserRouter([
         element: <Favourites />,
       },
       {
-        path: '/:gender',
+        path: '/:gender?',
         element: <MainPage />,
         loader: mainPageLoader,
       },
