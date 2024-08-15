@@ -4,6 +4,16 @@ import RETURN_ICON from '../../assets/return.svg'
 import { FullWidthButton } from '../FullWidthButton/FullWidthButton'
 
 export function Details({ product }) {
+  const accordionContent = [
+    {
+      title: 'Opis produktu',
+      content: product.description,
+    },
+    {
+      title: 'Wskazówki pielęgnacyjne',
+      content: product.maintenanceInfo,
+    },
+  ]
   return (
     <div className={styles.details}>
       <h2>{product.brand}</h2>
