@@ -10,6 +10,7 @@ import { Cart } from './views/Cart/Cart.jsx'
 import { ProductList } from './views/ProductList/ProductList.jsx'
 import { ProductDetails } from './views/ProductDetails/ProductDetails.jsx'
 import { Layout } from './components/Layout/Layout.jsx'
+import { mainPageLoader } from './api/mainPageLoader.js'
 
 const router = createBrowserRouter([
   {
@@ -27,20 +28,7 @@ const router = createBrowserRouter([
       {
         path: '/:gender',
         element: <MainPage />,
-        loader: ({ params }) => {
-          const PATH_TO_ENDPOINT_MAPPING = {
-            kobieta: 'women',
-            mezczyzna: 'men',
-            dziecko: 'children',
-          }
-
-          const backEndPath = PATH_TO_ENDPOINT_MAPPING[params.gender]
-          if (backEndPath) {
-            return fetch(`http://localhost:3000/${backEndPath}`)
-          } else {
-            return redirect('/kobieta')
-          }
-        },
+        loader: mainPageLoader,
       },
     ],
   },
