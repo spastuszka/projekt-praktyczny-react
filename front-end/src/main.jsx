@@ -24,6 +24,10 @@ const router = createBrowserRouter([
         path: '/ulubione',
         element: <Favourites />,
       },
+      {
+        path: '/:gender',
+        element: <MainPage />,
+      },
     ],
   },
 ])
