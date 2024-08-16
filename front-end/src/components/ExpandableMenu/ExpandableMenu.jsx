@@ -1,10 +1,11 @@
 import styles from './ExpandableMenu.module.css'
 
 import { CATEGORIES } from '../../constants/categories'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 import ARROW_ICON from '../../assets/arrow.svg'
 
 export function ExpandableMenu() {
+  const params = useParams()
   const activePath = 'odziez'
   return (
     <div className={styles.expandableMenu}>
@@ -13,7 +14,7 @@ export function ExpandableMenu() {
         {CATEGORIES.map((category) => {
           return (
             <li key={category.path}>
-              <NavLink to={category.path}>
+              <NavLink to={`/${params.gender}/${category.path}`}>
                 {category.categoryName}{' '}
                 <img
                   src={ARROW_ICON}
