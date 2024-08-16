@@ -9,7 +9,7 @@ export function ExpandableMenu() {
   const activePath = params.category
   return (
     <div className={styles.expandableMenu}>
-      <p>Kobieta</p>
+      <p>{params.gender}</p>
       <ul>
         {CATEGORIES.map((category) => {
           return (
