@@ -37,7 +37,7 @@ export function Breadcrumbs() {
       {breadcumbs.map((breadcumb) => {
         return (
           <li key={breadcumb.path}>
-            <NavLink to={breadcumb.path}>
+            <NavLink end to={breadcumb.path}>
               {breadcumb.categoryName}
               <img src={ARROW_ICON} />
             </NavLink>
