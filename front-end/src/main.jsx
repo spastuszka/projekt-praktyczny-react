@@ -11,6 +11,7 @@ import { ProductList } from './views/ProductList/ProductList.jsx'
 import { Layout } from './components/Layout/Layout.jsx'
 import { mainPageLoader } from './api/mainPageLoader.js'
 import { productListLoader } from './api/productListLoader.js'
+import { ProductDetails } from './views/ProductDetails/ProductDetails.jsx'
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
         path: '/:gender/:category/:subcategory?',
         element: <ProductList />,
         loader: productListLoader,
+      },
+      {
+        path: '/:gender/:category/:subcategory/:productId',
+        element: <ProductDetails />,
       },
     ],
   },
