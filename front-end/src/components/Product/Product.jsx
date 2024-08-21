@@ -1,5 +1,5 @@
 import styles from './Product.module.css'
-import { Link } from 'react-router-dom'
+import { Link, Form } from 'react-router-dom'
 
 const ENDPOINT_TO_PATH_MAPPING = {
   men: 'mezczyzna',
@@ -18,7 +18,11 @@ export function Product({ product }) {
       <img src={product.photos[0]} alt="" />
       <h3>{product.productName}</h3>
       <p>{product.pricePLN}zł</p>
-      <div className={styles.heart}></div>
+      <Form>
+        <button>
+          <div className={styles.heart}></div>
+        </button>
+      </Form>
     </Link>
   )
 }
