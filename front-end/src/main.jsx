@@ -14,6 +14,7 @@ import { productListLoader } from './api/productListLoader.js'
 import { ProductDetails } from './views/ProductDetails/ProductDetails.jsx'
 import { productLoader } from './api/productLoader.js'
 import { addProductToFavouritesAction } from './api/addProductToFavouritesAction.js'
+import { favouritesLoader } from './api/favouritesLoader.js'
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
       {
         path: '/ulubione',
         element: <Favourites />,
+        loader: favouritesLoader,
       },
       {
         path: '/:gender?',
