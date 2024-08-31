@@ -2,7 +2,8 @@ import styles from './FavouritesProduct.module.css'
 import REMOVE_ICON from '../../assets/remove.svg'
 import BAG_ICON from '../../assets/bag.svg'
 
-export function FavouritesProduct({ product }) {
+export function FavouritesProduct({ favourite }) {
+  const product = favourite.product
   return (
     <div className={styles.favouriteProduct}>
       <img src={product.photos[0]} />
