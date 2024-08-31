@@ -23,7 +23,7 @@ const router = createBrowserRouter([
     action: addProductToFavouritesAction,
   },
   {
-    path: 'delete-from-favourites/:favouriteId',
+    path: '/delete-from-favourites/:favouriteId',
     action: deleteFavouriteAction,
   },
   {
