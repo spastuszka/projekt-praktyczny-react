@@ -12,7 +12,9 @@ import { CURRENCIES } from '../../constants/currencies'
 import { useState } from 'react'
 
 export function Layout() {
-  const [currency, setCurrency] = useState(CURRENCIES.PLN)
+  const [currency, setCurrency] = useState(
+    localStorage['selected_currency'] || CURRENCIES.PLN
+  )
   return (
     <>
       <CurrencyContext.Provider value={[currency, setCurrency]}>
