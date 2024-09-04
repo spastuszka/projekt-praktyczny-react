@@ -8,6 +8,7 @@ import { MainContent } from '../MainContent/MainContent'
 import { MainMenu } from '../MainMenu/MainMenu'
 import { TopBar } from '../TopBar/TopBar'
 import { CurrencyContext } from '../../contexts/CurrencyContext'
+import { CartContext } from '../../contexts/CartContext'
 import { CURRENCIES } from '../../constants/currencies'
 import { useState } from 'react'
 
@@ -15,23 +16,28 @@ export function Layout() {
   const [currency, setCurrency] = useState(
     localStorage['selected_currency'] || CURRENCIES.PLN
   )
+
+  const [cartItem, setCartItem] = useState([])
+
   return (
     <>
-      <CurrencyContext.Provider value={[currency, setCurrency]}>
-        <MainContent>
-          <TopBar>
-            <MainMenu />
-            <Logo />
-            <div>
-              <CurrencySelector />
-              <IconMenu />
-            </div>
-          </TopBar>
-          <CategoryMenu />
-          <Outlet />
-        </MainContent>
-        <Footer />
-      </CurrencyContext.Provider>
+      <CartContext.Provider value={[cartItem, setCartItem]}>
+        <CurrencyContext.Provider value={[currency, setCurrency]}>
+          <MainContent>
+            <TopBar>
+              <MainMenu />
+              <Logo />
+              <div>
+                <CurrencySelector />
+                <IconMenu />
+              </div>
+            </TopBar>
+            <CategoryMenu />
+            <Outlet />
+          </MainContent>
+          <Footer />
+        </CurrencyContext.Provider>
+      </CartContext.Provider>
     </>
   )
 }
