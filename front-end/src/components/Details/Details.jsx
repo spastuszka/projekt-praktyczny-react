@@ -7,7 +7,7 @@ import { useContext } from 'react'
 import { CartContext } from '../../contexts/CartContext'
 
 export function Details({ product }) {
-  const [cartItems, setCartItems] = useContext(CartContext)
+  const [, setCartItems] = useContext(CartContext)
 
   const accordionContent = [
     {

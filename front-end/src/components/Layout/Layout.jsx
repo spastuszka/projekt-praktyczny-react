@@ -17,11 +17,17 @@ export function Layout() {
     localStorage['selected_currency'] || CURRENCIES.PLN
   )
 
-  const [cartItem, setCartItem] = useState([])
+  const [cartItem, setCartItems] = useState([])
+
+  function addProductToCart(product) {
+    setCartItems((previousCarItems) => {
+      return [...previousCarItems, product]
+    })
+  }
 
   return (
     <>
-      <CartContext.Provider value={[cartItem, setCartItem]}>
+      <CartContext.Provider value={[cartItem, addProductToCart]}>
         <CurrencyContext.Provider value={[currency, setCurrency]}>
           <MainContent>
             <TopBar>
