@@ -7,7 +7,7 @@ import { useContext } from 'react'
 import { CartContext } from '../../contexts/CartContext'
 
 export function Details({ product }) {
-  const [, setCartItems] = useContext(CartContext)
+  const [, addProductToCart] = useContext(CartContext)
 
   const accordionContent = [
     {
@@ -26,9 +26,7 @@ export function Details({ product }) {
       <p className={styles.price}>{product.pricePLN}</p>
       <FullWidthButton
         onClick={() => {
-          setCartItems((previousCarItems) => {
-            return [...previousCarItems, product]
-          })
+          addProductToCart(product)
         }}
         isBlack={true}
       >

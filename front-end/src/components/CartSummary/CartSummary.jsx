@@ -1,5 +1,6 @@
 import styles from './CartSummary.module.css'
-import { FullWidthButton } from '../../components/FullWidthButton/FullWidthButton'
+
+import { FullWidthButton } from '../FullWidthButton/FullWidthButton'
 import CAR_ICON from '../../assets/car.svg'
 import { useContext } from 'react'
 import { CurrencyContext } from '../../contexts/CurrencyContext'
@@ -29,11 +30,12 @@ export function CartSummary({ products }) {
   })
 
   const totalCost = sum > minSumForFreeDelivery ? sum : sum + deliveryCost
+
   return (
     <div className={styles.cartSummary}>
       <h2>Podsumowanie</h2>
       <div className={styles.cartRow}>
-        <p>Wartość produktów</p>
+        <p>Wartość produktów: </p>
         <p>
           {sum}
           {currencySign}

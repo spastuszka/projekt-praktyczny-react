@@ -8,26 +8,32 @@ import { MainContent } from '../MainContent/MainContent'
 import { MainMenu } from '../MainMenu/MainMenu'
 import { TopBar } from '../TopBar/TopBar'
 import { CurrencyContext } from '../../contexts/CurrencyContext'
-import { CartContext } from '../../contexts/CartContext'
-import { CURRENCIES } from '../../constants/currencies'
 import { useState } from 'react'
+import { CURRENCIES } from '../../constants/currencies'
+import { CartContext } from '../../contexts/CartContext'
 
 export function Layout() {
   const [currency, setCurrency] = useState(
     localStorage['selected_currency'] || CURRENCIES.PLN
   )
 
-  const [cartItem, setCartItems] = useState([])
+  const [cartItems, setCartItems] = useState(() => {
+    return localStorage['cart_products']
+      ? JSON.parse(localStorage['cart_products'])
+      : []
+  })
 
   function addProductToCart(product) {
-    setCartItems((previousCarItems) => {
-      return [...previousCarItems, product]
+    setCartItems((previousCartItems) => {
+      const newState = [...previousCartItems, product]
+      localStorage['cart_products'] = JSON.stringify(newState)
+      return newState
     })
   }
 
   return (
     <>
-      <CartContext.Provider value={[cartItem, addProductToCart]}>
+      <CartContext.Provider value={[cartItems, addProductToCart]}>
         <CurrencyContext.Provider value={[currency, setCurrency]}>
           <MainContent>
             <TopBar>
