@@ -1,5 +1,5 @@
-import styles from './FlexContainer.module.css'
+import styles from "./FlexContainer.module.css";
 
 export function FlexContainer({ children }) {
-  return <div className={styles.flexContainer}>{children}</div>
+    return <div className={styles.flexContainer}>{children}</div>;
 }

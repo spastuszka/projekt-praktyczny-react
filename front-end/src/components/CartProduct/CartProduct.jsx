@@ -4,10 +4,11 @@ import { Price } from '../Price/Price'
 
 export function CartProduct({ product }) {
   const price = <Price product={product} />
+
   return (
-    <div className={styles.cartProduct}>
+    <div className={styles.favouriteProduct}>
       <img src={product.photos[0]} />
-      <div className={styles.cartProductInfo}>
+      <div className={styles.favouriteProductInfo}>
         <div className={styles.topRow}>
           <h3>
             {product.brand} {product.productName}
@@ -15,7 +16,7 @@ export function CartProduct({ product }) {
           <p>{price}</p>
         </div>
         <p className={styles.priceRow}>
-          <span>Cena:</span>
+          <span>Cena: </span>
           {price}
         </p>
         <div className={styles.buttonRow}>

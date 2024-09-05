@@ -6,6 +6,15 @@ import { useContext } from 'react'
 import { CurrencyContext } from '../../contexts/CurrencyContext'
 import { CURRENCIES, CURRENCY_SIGN } from '../../constants/currencies'
 
+export function HelloReact({ name }) {
+  return (
+    <>
+      <h1>Komponent Reactowy!</h1>
+      <p>Witaj {name}!</p>
+    </>
+  )
+}
+
 export function CartSummary({ products }) {
   const [currency] = useContext(CurrencyContext)
 
